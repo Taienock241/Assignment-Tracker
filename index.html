@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studyboard | Assignment tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Studyboard home"><span class="brand-mark">S</span><span>studyboard</span></a>
+        <div class="date-label" id="todayLabel"></div>
+        <div class="avatar" aria-label="Your profile">TA</div>
+      </header>
+
+      <section class="hero" aria-labelledby="pageTitle">
+        <div>
+          <p class="eyebrow">YOUR ACADEMIC DASHBOARD</p>
+          <h1 id="pageTitle">Make space for<br /><em>good work.</em></h1>
+          <p class="hero-copy">A quiet place to see what is due, keep momentum, and finish the week feeling lighter.</p>
+        </div>
+        <div class="progress-card">
+          <div class="progress-ring" id="progressRing"><span id="progressPercent">0%</span></div>
+          <div><strong id="progressTitle">A clean slate</strong><span id="progressDetail">Add an assignment to begin</span></div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Assignment workspace">
+        <div class="content-column">
+          <div class="section-heading">
+            <div><p class="eyebrow">YOUR WORKLOAD</p><h2 id="sectionTitle">All assignments</h2></div>
+            <button class="primary-button" id="addAssignmentButton" type="button"><span>+</span> New assignment</button>
+          </div>
+          <nav class="filters" aria-label="Filter assignments">
+            <button class="filter-button active" data-filter="all" type="button">All <span id="allCount">0</span></button>
+            <button class="filter-button" data-filter="today" type="button">Due today <span id="todayCount">0</span></button>
+            <button class="filter-button" data-filter="upcoming" type="button">Upcoming <span id="upcomingCount">0</span></button>
+            <button class="filter-button" data-filter="completed" type="button">Completed <span id="completedCount">0</span></button>
+          </nav>
+          <div class="assignment-list" id="assignmentList"></div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="week-header"><div><p class="eyebrow">THIS WEEK</p><h3 id="weekRange">Your rhythm</h3></div><span class="spark">✦</span></div>
+          <div class="week-chart" id="weekChart"></div>
+          <div class="quote"><span>“</span><p>Small progress is still progress. Keep going.</p></div>
+          <div class="tip"><span class="tip-icon">✎</span><div><strong>Study tip</strong><p>Start with the assignment that feels easiest. Momentum is a powerful thing.</p></div></div>
+        </aside>
+      </section>
+    </main>
+
+    <dialog id="assignmentDialog">
+      <form method="dialog" id="assignmentForm">
+        <button class="close-button" value="cancel" aria-label="Close dialog">×</button>
+        <p class="eyebrow">ADD TO YOUR BOARD</p>
+        <h2>New assignment</h2>
+        <label>Assignment name<input id="assignmentName" name="name" type="text" placeholder="e.g. Read chapter 4" required /></label>
+        <div class="form-row"><label>Course<input id="assignmentCourse" name="course" type="text" placeholder="e.g. History" required /></label><label>Due date<input id="assignmentDue" name="due" type="date" required /></label></div>
+        <label>Priority<select id="assignmentPriority" name="priority"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+        <div class="dialog-actions"><button class="text-button" value="cancel" type="button" id="cancelButton">Cancel</button><button class="primary-button" value="default" type="submit">Add assignment</button></div>
+      </form>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
