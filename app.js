@@ -1,8 +1,8 @@
 const defaultAssignments = [
-  { id: 1, name: 'Read chapter 4 & take notes', course: 'World History', due: '2026-09-28', priority: 'medium', completed: false },
+  { id: 1, name: 'Read chapter 4 & take notes', course: 'Computer Architecture and Organization', due: '2026-09-28', priority: 'medium', completed: false },
   { id: 2, name: 'Problem set 06', course: 'Calculus II', due: '2026-09-29', priority: 'high', completed: false },
-  { id: 3, name: 'Draft thesis statement', course: 'English Composition', due: '2026-10-01', priority: 'low', completed: false },
-  { id: 4, name: 'Lab report: enzyme activity', course: 'Biology', due: '2026-09-25', priority: 'high', completed: true }
+  { id: 3, name: 'Draft thesis statement', course: 'Literature', due: '2026-10-01', priority: 'low', completed: false },
+  { id: 4, name: 'Lab report: enzyme activity', course: 'Microbiology', due: '2026-09-25', priority: 'high', completed: true }
 ];
 
 let assignments = JSON.parse(localStorage.getItem('studyboard-assignments')) || defaultAssignments;
